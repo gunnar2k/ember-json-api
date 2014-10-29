@@ -155,7 +155,8 @@ DS.JsonApiSerializer = DS.RESTSerializer.extend({
     var attr = relationship.key;
     var key = this.keyForRelationship(attr);
 
-    var relationshipType = DS.RelationshipChange.determineRelationshipType(record.constructor, relationship);
+    //var relationshipType = DS.RelationshipChange.determineRelationshipType(record.constructor, relationship);
+    var relationshipType = record.constructor.determineRelationshipType(record.constructor, relationship);
 
     if (relationshipType === 'manyToNone' ||
         relationshipType === 'manyToMany') {
