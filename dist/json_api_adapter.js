@@ -1,8 +1,8 @@
 /*! 
  * ember-json-api
- * Built on 2014-10-29
+ * Built on 2015-02-12
  * http://github.com/daliwali/ember-json-api
- * Copyright (c) 2014 Dali Zheng
+ * Copyright (c) 2015 Dali Zheng
  */
 (function() {
 "use strict";
@@ -150,7 +150,10 @@ DS.JsonApiSerializer = DS.RESTSerializer.extend({
     var belongsTo = get(record, attr);
     var key = this.keyForRelationship(attr);
 
-    if (isNone(belongsTo)) return;
+    console.log("belongsTo");
+    console.log(belongsTo);
+
+    // if (isNone(belongsTo)) return;
 
     json.links = json.links || {};
     json.links[key] = get(belongsTo, 'id');
