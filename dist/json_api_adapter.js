@@ -153,6 +153,9 @@ DS.JsonApiSerializer = DS.RESTSerializer.extend({
     console.log("belongsTo");
     console.log(belongsTo);
 
+    console.log("get(belongsTo, 'id')");
+    console.log(get(belongsTo, 'id'));
+
     // if (isNone(belongsTo)) return;
 
     json.links = json.links || {};
