@@ -148,10 +148,16 @@ DS.JsonApiSerializer = DS.RESTSerializer.extend({
     var belongsTo = get(record, attr);
     var key = this.keyForRelationship(attr);
 
-    if (isNone(belongsTo)) return;
+    // if (isNone(belongsTo)) return;
 
     json.links = json.links || {};
-    json.links[key] = get(belongsTo, 'id');
+
+    if belongsTo == null {
+      json.links[key] = null
+    } else {
+      json.links[key] = get(belongsTo, 'id');
+    }
+
   },
 
   /**
