@@ -152,6 +152,8 @@ DS.JsonApiSerializer = DS.RESTSerializer.extend({
 
     json.links = json.links || {};
 
+    console.log("TEST");
+    
     if belongsTo == null {
       json.links[key] = null
     } else {
